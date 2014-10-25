@@ -396,18 +396,6 @@
       (println "I do not have the ingredient" ingredient)
       :error)))
 
-(defn bake-cake []
-  (add :flour)
-  (add :flour)
-  (add :sugar)
-  (add :milk)
-  (add :egg)
-  (add :egg)
-  (mix)
-  (pour-into-pan)
-  (bake-pan 25)
-  (cool-pan))
-
 (defn add-eggs [quantity]
   (dotimes [counter quantity]
     (add :egg)))
@@ -427,3 +415,13 @@
 (defn add-butters [quantity]
   (dotimes [counter quantity]
     (add :butter)))
+
+(defn bake-cake []
+  (add-flour-cups 2)
+  (add-sugar-cups 1)
+  (add-milk-cups 1)
+  (add-eggs 2)
+  (mix)
+  (pour-into-pan)
+  (bake-pan 25)
+  (cool-pan))
