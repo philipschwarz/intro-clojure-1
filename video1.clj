@@ -407,3 +407,23 @@
   (pour-into-pan)
   (bake-pan 25)
   (cool-pan))
+
+(defn add-eggs [quantity]
+  (dotimes [counter quantity]
+    (add :egg)))
+
+(defn add-flour-cups [quantity]
+  (dotimes [counter quantity]
+    (add :flour)))
+
+(defn add-sugar-cups [quantity]
+  (dotimes [counter quantity]
+    (add :sugar)))
+
+(defn add-milk-cups [quantity]
+  (dotimes [counter quantity]
+    (add :milk)))
+
+(defn add-butters [quantity]
+  (dotimes [counter quantity]
+    (add :butter)))
