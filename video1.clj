@@ -390,3 +390,14 @@
     :else
     (do (println "Unknown ingredient:" + ingredient)
       :error)))
+
+(defn scooped? [ingredient]
+  (cond
+    (= ingredient :milk)
+    true
+    (= ingredient :flour)
+    true
+    (= ingredient :sugar)
+    true
+    :else
+    false))
