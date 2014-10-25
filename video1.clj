@@ -407,3 +407,46 @@
 
 (defn simple? [ingredient]
   (= ingredient :butter))
+
+(defn add-scooped [ingredient]
+  (if (scooped? ingredient)
+    (do
+      (grab :cup)
+      (scoop ingredient)
+      (add-to-bowl)
+      (release))
+    (do
+      (println "This function only works on scooped ingredients. You asked me to scoop" ingredient)
+      :error)))
+
+(defn add-squeezed [ingredient]
+  (if (squeezed? ingredient)
+    (do
+      (grab ingredient)
+      (squeeze)
+      (add-to-bowl))
+    (do
+      (println "This function only works on squeezed ingredients. You asked me to squeeze" ingredient)
+      :error)))
+
+(defn add-simple [ingredient]
+  (if (simple? ingredient)
+    (do
+      (grab ingredient)
+      (add-to-bowl))
+    (do
+      (println "This function only works with simple ingredients. You asked me to add" ingredient)
+      :error)))
+
+(defn add [ingredient]
+  (cond
+    (squeezed? ingredient)
+    (add-squeezed ingredient)
+    (scooped? ingredient)
+    (add-scooped ingredient)
+    (simple? ingredient)
+    (add-simple ingredient)
+    :else
+    (do
+      (println "I do not have the ingredient" ingredient)
+      :error)))
