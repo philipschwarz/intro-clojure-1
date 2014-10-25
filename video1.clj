@@ -401,3 +401,6 @@
     true
     :else
     false))
+
+(defn squeezed? [ingredient]
+  (= ingredient :egg))
