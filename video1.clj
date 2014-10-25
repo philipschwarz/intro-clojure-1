@@ -363,3 +363,14 @@
   (grab :butter)
   (add-to-bowl))
 
+(defn bake-cake []
+  (add-flour)
+  (add-flour)
+  (add-sugar)
+  (add-milk)
+  (add-egg)
+  (add-egg)
+  (mix)
+  (pour-into-pan)
+  (bake-pan 25)
+  (cool-pan))
